@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="assets/JQuery/jquery-3.2.1.js"></script>
+  <link rel="stylesheet" type="text/css" href="assets/css/stylepage.css">
+  <title>Exercice 5</title>
+</head>
+<body>
+    <div id="square"></div>
+  <script>
+    var horizontal =0;
+    var vertical =0;
+    $(document).keypress(function(event){
+      code = event.keyCode;
+      console.log(code);
+      switch(code){
+        /*left*/
+        case 37: horizontal-=10; if(horizontal<0){horizontal=parseInt($(document).width())-101.6;} $('#square').css('margin-left',horizontal); break;
+        /*up*/
+        case 38: vertical-=10; if(vertical<0){vertical= parseInt($(document).height())-101.6} $('#square').css('margin-top',vertical); break;
+        /*right*/
+        case 39:  horizontal+=10; if(horizontal>parseInt($(document).width())-101.6){horizontal=0;} $('#square').css('margin-left',horizontal); break;
+        /*down*/
+        case 40: vertical+=10; if(vertical>parseInt($(document).height())-101.6){vertical=0;} $('#square').css('margin-top',vertical); break;
+        default: alert('Mauvais Bouton !');
+      }
+    });
+</script>
+</body>
+</html>
